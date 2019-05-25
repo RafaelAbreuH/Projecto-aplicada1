@@ -28,7 +28,23 @@ namespace Projecto_Aplicada1
 
         private void CargosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            rCargos ver = new rCargos();
+            ver.MdiParent = this;
+            ver.Show();
+        }
 
+        private void UsuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cUsuario ver = new cUsuario();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void CargosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cCargos ver = new cCargos();
+            ver.MdiParent = this;
+            ver.Show();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 
 namespace Projecto_Aplicada1.BLL
 {
-    class CargosBLL
+    public class CargosBLL
     {
         //Guardar Usuario
         public static bool Guardar(Cargos cargo)
@@ -81,7 +81,7 @@ namespace Projecto_Aplicada1.BLL
 
         }
 
-        //para Buscar los usuario
+        //para Buscar los
         public static Cargos Buscar(int id)
         {
             Contexto contexto = new Contexto();

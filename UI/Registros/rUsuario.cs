@@ -44,7 +44,7 @@ namespace Projecto_Aplicada1.UI.Registros
             Usuarios usuario = new Usuarios();
             usuario.UsuarioId = Convert.ToInt32(IdnumericUpDown.Value);
             usuario.Usuario = UsuariotextBox.Text;
-            usuario.Nombres = NombretextBox.Text;
+            usuario.Nombre = NombretextBox.Text;
             usuario.Email = EmailtextBox.Text;
             usuario.Clave = ClavemaskedTextBox.Text;
             usuario.NivelUsuario = NivelUsuariocomboBox.Text;
@@ -56,7 +56,7 @@ namespace Projecto_Aplicada1.UI.Registros
         private void LlenaCampo(Usuarios usuario)
         {
             IdnumericUpDown.Value = usuario.UsuarioId;
-            NombretextBox.Text = usuario.Nombres;
+            NombretextBox.Text = usuario.Nombre;
             UsuariotextBox.Text = usuario.Usuario;
             EmailtextBox.Text = usuario.Email;
             ClavemaskedTextBox.Text = usuario.Clave;
@@ -103,12 +103,6 @@ namespace Projecto_Aplicada1.UI.Registros
                 paso = false;
             }
 
-            if (NivelUsuariocomboBox.SelectedIndex == 0)
-            {
-                MyerrorProvider.SetError(NivelUsuariocomboBox, "Debes elegir que nivel es el usuario");
-                NivelUsuariocomboBox.Focus();
-                paso = false;
-            }
             return paso;
         }
 
