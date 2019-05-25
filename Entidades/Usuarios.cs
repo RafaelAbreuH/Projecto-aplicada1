@@ -11,7 +11,7 @@ namespace Projecto_Aplicada1.Entidades
     {
         [Key]
         public int UsuarioId { get; set; }
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
         public string Email { get; set; }
         public string NivelUsuario { get; set; }
         public String Usuario { get; set; }
@@ -21,7 +21,7 @@ namespace Projecto_Aplicada1.Entidades
         public Usuarios()
         {
             UsuarioId = 0;
-            Nombre = String.Empty;
+            Nombres = String.Empty;
             Email = String.Empty;
             Clave = String.Empty;
             NivelUsuario = String.Empty;

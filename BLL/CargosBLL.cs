@@ -5,24 +5,22 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projecto_Aplicada1.BLL
 {
-     public class UsuariosBLL
+    class CargosBLL
     {
         //Guardar Usuario
-        public static bool Guardar(Usuarios usuario)
+        public static bool Guardar(Cargos cargo)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                if (contexto.Usuario.Add(usuario) != null)
+                if (contexto.Cargo.Add(cargo) != null)
                     paso = contexto.SaveChanges() > 0;
-               
+
             }
             catch (Exception)
             {
@@ -37,14 +35,14 @@ namespace Projecto_Aplicada1.BLL
         }
 
         //Modificar Usuario
-        public static bool Modificar(Usuarios usuario)
+        public static bool Modificar(Cargos cargo)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                contexto.Entry(usuario).State = EntityState.Modified;
+                contexto.Entry(cargo).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
 
             }
@@ -66,7 +64,7 @@ namespace Projecto_Aplicada1.BLL
             Contexto contexto = new Contexto();
             try
             {
-                var eliminar = contexto.Usuario.Find(id);
+                var eliminar = contexto.Cargo.Find(id);
                 contexto.Entry(eliminar).State = EntityState.Deleted;
 
                 paso = (contexto.SaveChanges() > 0);
@@ -84,13 +82,13 @@ namespace Projecto_Aplicada1.BLL
         }
 
         //para Buscar los usuario
-        public static Usuarios Buscar(int id)
+        public static Cargos Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Usuarios usuario = new Usuarios();
+            Cargos cargo = new Cargos();
             try
             {
-                usuario = contexto.Usuario.Find(id);
+                cargo = contexto.Cargo.Find(id);
             }
             catch (Exception)
             {
@@ -100,17 +98,17 @@ namespace Projecto_Aplicada1.BLL
             {
                 contexto.Dispose();
             }
-            return usuario;
+            return cargo;
         }
 
         //Lista
-        public static List<Usuarios> Getlist(Expression<Func<Usuarios, bool>> expression)
+        public static List<Cargos> Getlist(Expression<Func<Cargos, bool>> expression)
         {
-            List<Usuarios> lista = new List<Usuarios>();
+            List<Cargos> lista = new List<Cargos>();
             Contexto contexto = new Contexto();
             try
             {
-                lista = contexto.Usuario.Where(expression).ToList();
+                lista = contexto.Cargo.Where(expression).ToList();
 
             }
             catch (Exception)
